@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prueba librería</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Prueba de la librería validaciones-ximena</h1>
+
+<h3>Correo</h3>
+<input type="text" id="correo" placeholder="Escribe tu correo">
+<button onclick="validarCorreoHTML()">Validar</button>
+<p id="resCorreo"></p>
+
+<h3>Teléfono</h3>
+<input type="text" id="telefono" placeholder="10 dígitos">
+<button onclick="validarTelefonoHTML()">Validar</button>
+<p id="resTelefono"></p>
+
+<h3>Edad</h3>
+<input type="number" id="edad">
+<button onclick="validarEdadHTML()">Validar</button>
+<p id="resEdad"></p>
+
+<h3>Contraseña</h3>
+<input type="text" id="password">
+<button onclick="validarPassHTML()">Validar</button>
+<p id="resPass"></p>
+
+<h3>Solo letras</h3>
+<input type="text" id="letras">
+<button onclick="validarLetrasHTML()">Validar</button>
+<p id="resLetras"></p>
+
+<h3>Solo números</h3>
+<input type="text" id="numeros">
+<button onclick="validarNumerosHTML()">Validar</button>
+<p id="resNumeros"></p>
+
+<script src="validaciones.js"></script>
+
+<script>
+
+function validarCorreoHTML(){
+    let dato = document.getElementById("correo").value;
+    document.getElementById("resCorreo").innerText =
+        validarCorreo(dato) ? "Correcto ✅" : "Incorrecto ❌";
+}
+
+function validarTelefonoHTML(){
+    let dato = document.getElementById("telefono").value;
+    document.getElementById("resTelefono").innerText =
+        validarTelefono(dato) ? "Correcto ✅" : "Incorrecto ❌";
+}
+
+function validarEdadHTML(){
+    let dato = document.getElementById("edad").value;
+    document.getElementById("resEdad").innerText =
+        esMayorDeEdad(dato) ? "Es mayor de edad ✅" : "Es menor ❌";
+}
+
+function validarPassHTML(){
+    let dato = document.getElementById("password").value;
+    document.getElementById("resPass").innerText =
+        validarPassword(dato) ? "Contraseña segura ✅" : "Contraseña débil ❌";
+}
+
+function validarLetrasHTML(){
+    let dato = document.getElementById("letras").value;
+    document.getElementById("resLetras").innerText =
+        soloLetras(dato) ? "Solo letras ✅" : "Tiene otros caracteres ❌";
+}
+
+function validarNumerosHTML(){
+    let dato = document.getElementById("numeros").value;
+    document.getElementById("resNumeros").innerText =
+        soloNumeros(dato) ? "Solo números ✅" : "No son solo números ❌";
+}
+
+</script>
+
+</body>
+</html>
